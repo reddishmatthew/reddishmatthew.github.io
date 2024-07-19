@@ -1,12 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
-/*
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -99,7 +93,7 @@ input, select, textarea {
 	}
 	
 	body {
-		background: #98cee7;
+		background: #f4f4f4;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -182,11 +176,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: #FF462Eff !important;
 		}
 
 			a:hover:before {
-				color: #2ebaae !important;
+				color: #FF462Eff !important;
 			}
 
 	strong, b {
@@ -1891,8 +1885,9 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #2ebaae;
-			color: #2ebaae !important;
+			box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
+			background-color: rgb(93, 15, 33);
+			color: white !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -2070,8 +2065,8 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ebaae;
-			box-shadow: inset 0 0 0 1px #2ebaae;
+			border-color: #FF462Eff;
+			box-shadow: inset 0 0 0 1px #FF462Eff;
 		}
 
 	.select-wrapper {
@@ -2212,8 +2207,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #2ebaae;
-			box-shadow: 0 0 0 1px #2ebaae;
+			border-color: #FF462Eff;
+			box-shadow: 0 0 0 1px #FF462Eff;
 		}
 
 	input[type="radio"] + label:before {
@@ -2555,7 +2550,6 @@ input, select, textarea {
 		list-style: none;
 		padding: 0;
 	}
-
 		ul.posts li {
 			border-top: dotted 1px rgba(160, 160, 160, 0.3);
 			margin: 1.5em 0 0 0;
@@ -2600,11 +2594,13 @@ input, select, textarea {
 				-ms-flex-grow: 1;
 				flex-grow: 1;
 				-ms-flex: 1;
+
 			}
 
 				ul.posts article header h3 {
 					font-size: 0.7em;
 					margin-top: 0.125em;
+					
 				}
 
 				ul.posts article header .published {
@@ -2745,6 +2741,7 @@ input, select, textarea {
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
+			background-image: linear-gradient(to right, #260E16ff, #601629ff , #8E2E51ff, 	#FF462Eff);
 			border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 			left: -3em;
 			margin: -3em 0 3em 0;
@@ -2764,7 +2761,14 @@ input, select, textarea {
 				.post > header .title h2 {
 					font-weight: 900;
 					font-size: 1.5em;
+					color:rgba(255, 255, 255, 0.863)
 				}
+
+				.post > header .title p {
+					font-weight: 900;
+					font-size: 0.7em;
+					color:rgba(255, 255, 255, 0.863)
+				}	
 
 				.post > header .title > :last-child {
 					margin-bottom: 0;
@@ -2967,6 +2971,7 @@ input, select, textarea {
 
 					.post > header .title h2 {
 						font-size: 1.1em;
+
 					}
 
 		}
@@ -3585,7 +3590,7 @@ input, select, textarea {
 					}
 
 					#menu .links > li a:hover h3 {
-						color: #2ebaae;
+						color: #FF462Eff;
 					}
 
 				#menu .links > li:first-child {
