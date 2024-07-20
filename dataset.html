@@ -19,8 +19,7 @@
 						<nav class="links">
 							<ul>
             					<li><a href="dataset.html">Dataset</a></li>
-            					<li><a href="method.html">Method</a></li>
-            					<li><a href="preprocessing.html">Preprocessing</a></li>
+            					<li><a href="process.html">Process</a></li>
             					<li><a href="results.html">Results</a></li>
             					<li><a href="conclusion.html">Conclusion</a></li>
 							</ul>
@@ -46,13 +45,8 @@
 										</a>
 									</li>
             						<li>
-										<a href="method.html">
-											<h3>Method</h3>
-										</a>
-									</li>
-            						<li>
-										<a href="preprocessing.html">
-											<h3>Preprocessing</h3>
+										<a href="process.html">
+											<h3>Process</h3>
 										</a>
 									</li>
             						<li>
@@ -85,18 +79,131 @@
 								<header>
 									<div class="title">
 										<h2>Dataset</h2>
-										<p>Overview of the project's aim and significance.</p>
+										<p>Insight on the dataset used for this project.</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-11-01">To The Dataset</time>
+										<a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data" class="author"><span class="name">Brain MRI Images</span><img src="images/mri_dataset.png" alt="" /></a>
 									</div>
 								</header>
-								<img src="images/pic01.jpg" alt="" />
+								
 								<p></p>
-								<p>-----ENTER ABSTRACT HERE-----</p>
-							</article>
+								<h2>Brain Tumor MRI Dataset</h2>
+								<p>
+									This set contains 7,023 images in four distinct tumor classifications: Glioma, Meningioma, Pituitary, or no tumor found. This dataset itself was compiled from
+									three separate Brain MRI images datasets labeled Figshare, SARTAJ, and Br35H.
+								</p>
+								<h3>Figshare Dataset</h3>
+								<p>
+									This dataset was collected from 233 patients with 3,064 T1-weighted contrast-enhanced images of the same 
+									three diseases as our main dataset, but does not include data for non-tumorous cases.
+								</p>
+								<h3>SARTAJ Dataset</h3>
+								<p>
+									This dataset includes 3,264 images of the same four classifications used by our main dataset. 
+								</p>
+								<h3>Br35H</h3>
+								<p>
+									This dataset includes 3,060 images that are separated into three folders: Yes, No, and Pred. This is to classify
+									for tumorous, non-tumorous, and a prediction set of images accordingly. However, the main dataset only stripped the 
+									non-tumorous folder from this dataset for compilation.
+								</p>
+								<p>
+									The main Brain Tumor MRI Dataset splits it's large set into training and testing folders which each include a glioma, meningioma,
+									 piuitary, and notumor folder carrying the correctly labeled images. 
+								</p>
+								<h4>Training Set</h4>
+								<ul>
+									<li>Glioma: 1,321 images.</li>
+									<li>Meningioma: 1,339 images.</li>
+									<li>Pituitary: 1,457 images.</li>
+									<li>Non-tumorous: 1,595 images.</li>
+								</ul>
+								<h4>Testing Set</h4>
+								<ul>
+									<li>Glioma: 300 images</li>
+									<li>Meningioma: 306 images.</li>
+									<li>Pituitary: 300 images.</li>
+									<li>Non-tumorous: 405 images.</li>
+								</ul>
 
+							</article>
+							
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Tumor Classification</h2>
+										<p>Information on each tumor type.</p>
+									</div>
+								</header>
+								<p></p>
+
+								<h2>The Diseases</h2>
+
+								<h3>Glioma</h3>
+								<p>
+									This type grows inside of either the brain or the spinal cord, but does not typically spread 
+									outside of these areas. This tumor occurs when the glial cells, which are meant to support the nerves 
+									and aid the central nervous system, begin to grow uncontrollably. 
+								</p>
+								<img src="images/glioma.jpg" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+								<p class="align-center" style="font-size: 15px;">Representation of a glioma tumor.</p>
+								<h4>It has it's own three classifications.</h4>
+								<h4>1. Astrocytomas</h4>
+								<p>
+									Formed in the astrocyte cells in the brain stem, astrocytomas has aggressively fast growth. Astrocyte cells are crucial in the workings
+									of the central nervous system. Some tasks for these cells include supporting nutrients and structure to neurons, forming and maintaining synapses,
+									and aiding cerebral blood flow.
+
+								</p>
+								<h4>2. Ependymomas</h4>
+								<p>
+									Formed in the ependymocyte cells, ependymomas is capable of invading and damaging the cerebrospinal fluid. Ependymocytes are integral to 
+									the central nervous system by production, circulation, and regulation of cerebrospinal fluid and maintenance of neural tissue. 
+								</p>
+								<h4>3. Oligodendrogliomas</h4>
+								<p>
+									Formed in the oligodendrocyte cells, Oligodendrogliomas grows slowly but can become more aggressive with progression. Oligodendrocytes ensure 
+									rapid and efficient transmission of nerve impulses, maintaining the neural network.
+								</p>
+								
+
+								<h3>Meningioma</h3>
+								<p>
+									This type of tumor is the most common at 30% of all brain tumors. It originates in the outer three layers of tissue
+									residing between just below the skull that is meant to cover and protect the brain. 
+								</p>
+								<img src="images/meningioma.jpg" alt="" style="max-width: 25%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+								<p class="align-center" style="font-size: 15px;">Representation of a meningioma tumor.</p>
+								<p>
+									Meningioma is highly invasive. It can spread through the surface of the brain, the ventricular system (which can cause blockage of the flow
+									of cerebrospinal fluid), in the base and throughout the skull. This includes the base and area behind the eyes effecting nasal and optic nerves.
+								</p>
+
+								<h3>Pituitary</h3>
+									<p>
+										Formed in the pituitary gland, Pituitary tumors are typically non-cancerous and do not spread to other parts of the body. However, they can cause
+										harm by pressuring nearby parts of the brain and it's important nerves. In addition, this type can cause hormone changes within the patient leading to numerous symptoms. 
+									</p>
+									<img src="images/pituitary.jpg" alt="" style="max-width: 25%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+									<p class="align-center" style="font-size: 15px;">Representation of a pituitary tumor.</p>
+								<h4>It has it's own four classifications</h4>
+								<ul>
+									<li><b>1. Functioning: </b>These tumors produce hormones.</li>
+									<li><b>2. Nonfunctioning: </b>These tumors do not produce hormones.</li>
+									<li><b>3. Macroadenomas: </b>The larger tumors, measuring at least 1cm.</li>
+									<li><b>4. Microadenomas: </b>The smaller tumors, measuring less than 1cm.</li>
+								</ul>
+
+
+
+
+
+							</article>
 							<!-- Pagination -->
 							<ul class="actions pagination">
 								<li><a href="index.html" class="button large next">Previous Page</a></li>
-								<li><a href="method.html" class="button large next">Next Page</a></li>
+								<li><a href="process.html" class="button large next">Next Page</a></li>
 							</ul>
 
 			<!-- Scripts -->
