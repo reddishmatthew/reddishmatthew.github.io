@@ -94,6 +94,8 @@
 									converted into numpy arrays and kept as integer values corresponding to their respective classes, 
 									defined in label_map.
 								</p>
+								<img class="align-center" src="images/label_map.png" alt="" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p></p>
 								<p>
 									Lastly, each image is normalized by dividing by 255, as the range for RGB is 0 to 255 and this normalizes the pixel values 
 									to the range 0 to 1.
@@ -116,6 +118,8 @@
 									Conversely, the expansive path restores the spatial dimensions through up-convolutions (transposed convolutions) and concatenations with corresponding feature maps from the 
 									contracting path, allowing precise localization and segmentation.
 								</p>
+								<img class="align-center" src="images/unet.png" alt="" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Architecture of U-Net.</p>
 								<p>
 									This model was developed to address the challenge of segmenting complex structures in biomedical images
 									where precise delineation is crucial for diagnostics and treatment planning. The architecture allows the network
@@ -129,6 +133,8 @@
 									threshold where the values for the gradient are either zero or too large. To summarize, 
 									a large number of layers can have adverse effects on the performance and increase error.
 								</p>
+								<img class="align-center" src="images/resnet.png" alt="" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Architecture of ResNet.</p>
 								<p>
 									To solve this problem ResNet, short for residual networks, introduces residual blocks. 
 									These blocks contain skip connections that connect activations between layers. If a layer 
@@ -173,11 +179,12 @@
 								<p>
 									Here tensorflow is used to train the model for multi-class classification under the labels given in the label map. 
 									As the dataset is trained through ten epochs, the model and training history is saved. 
-								</p>
-								<p>
 									Once training is complete the model outputs the total history, including accuracy and loss for both the training and 
-									validation sets, as plots for visualization. 
+									validation sets, as plots for visualization. Below is an example output that represents our loss for the two sets. More will be
+									explained in the Results page.
 								</p>
+								<img class="align-center" src="images/epoch_v_loss.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Epoch vs. Loss for Training and Validation.</p>
 								<h3>Predictions</h3>
 								<p>
 									After downloading the models (either by URL or by path), we setup the classification labels and preprocess the testing 
@@ -187,30 +194,14 @@
 									mask for the tumor location. The tumor size in pixels, relative size to the brain, and classification are produced to 
 									the user. 
 								</p>
+								<img class="align-center" src="images/result_example.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Example Prediction Result Output.</p>
 							</article>
 
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2>The API</h2>
-										<p>Making a user-friendly interface.</p>
-									</div>
-								</header>
-									<p>
-										After reading the process of preparing and utilizing U-Net and ResNet, you can tell that it can be complicated or at least
-										time consuming. The goal of our API is to present an efficient and powerful tool, receiving a diagnosis within seconds. 
-									</p>
-									<p>
-										While the capabilities are currently using four unique classifications, this interface has the potential to meet any number 
-										of classifications or medical image sets expected from the user. The simplicity greatly broadens the user base from 
-										computer science specialists, to any nurse or doctor without programming experience. 
-									</p>
-								
-							</article>
                             <!-- Pagination -->
 							<ul class="actions pagination">
 								<li><a href="dataset.html" class="button large next">Previous Page</a></li>
-								<li><a href="preprocessing.html" class="button large next">Next Page</a></li>
+								<li><a href="results.html" class="button large next">Next Page</a></li>
 							</ul>
 
         <!-- Scripts -->
