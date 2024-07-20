@@ -79,12 +79,56 @@
 								<header>
 									<div class="title">
 										<h2>Results</h2>
-										<p>Overview of the project's aim and significance.</p>
+										<p>What we ended up with.</p>
 									</div>
 								</header>
-								<img src="images/pic01.jpg" alt="" />
-								<p></p>
-								<p>-----ENTER ABSTRACT HERE-----</p>
+								<h3>Training Results</h3>
+								<h4>ResNet Results</h4>
+								<p>
+									Below represents the increase of accuracy and decrease of loss in the ResNet model. As we can see 
+									the loss in training starts off high above 3, which is to be expected in initial training. What is great 
+									to see is the loss decreasing below 1 after this first epoch and steadily decreasing closer to zero over the
+									rest. The validation follows the same suit, where from epoch 4 and higher the loss seems to be only slightly 
+									higher than the training set. 
+								</p>
+								<img class="align-left" src="images/epoch_v_loss_resnet.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Epoch vs. Loss for Training and Validation in ResNet.</p>
+								<p>
+									We see the inverse happening with accuracy, where the training set of data approaches near perfect accuracy by the final epoch.
+									The validation set follows the training accuracy initially, but we see a drop in validation accuracy after the 4th epoch. For 
+									the rest of the epochs the validation accuracy dances between 94% and 97%, an accuracy that can still be praised. 
+								</p>
+								<img class="align-center" src="images/epoch_v_accuracy_resnet.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Epoch vs. Accuracy for Training and Validation in ResNet.</p>
+								<h4>U-Net Results</h4>
+								<p>
+									U-Net has strong values for both training and validation loss and accuracy. Unlike ResNet, which had more than 10 epochs, U-Net was setup 
+									with 4. This, however, did not prove adverse to it's success as the training loss had decreased from ~0.48 to ~0.24. The validation set 
+									had an improvement over the training set where it's loss decreased from ~0.36 to ~0.21.
+								</p>
+								<img class="align-center" src="images/epoch_v_loss.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Epoch vs. Loss for Training and Validation in U-Net.</p>
+								<p>
+									Accuracy saw the same great results. The training set had increased it's accuracy from ~78% to ~90% after the four 
+									epochs. The validation set again improved upon the training set and increased from ~81% to ~91%. 
+								</p>
+								<img class="align-center" src="images/epoch_v_accuracy.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Epoch vs. Accuracy for Training and Validation in U-Net.</p>
+								<p>
+									This then can be improved further on future iterations with changes to epoch amount, learning rate, batch size, and 
+									the size of training and validation sets. These models can already be seen to be powerfully accurate in determining 
+									the correct diagnosis. With increased use, the models will improve and accuracy will plateau closer to near perfection.
+								</p>
+								<h3>Prediction Results</h3>
+								<p>
+									It is then interesting to see, "What is the diagnosis of this image?" when we know the correct disease label. We found that 
+									the model can correctly distinguish the classification. If the classification is not non-tumorous, the program can accurately 
+									estimate the size of the tumor by pixels within the image and then use such information to estimate the relative size of the tumor 
+									compared to the size of the brain in percentage. Followed by the segmentation mask created by U-Net and the original image. Below is
+									the example you may recognize from the Process page.
+								</p>
+								<img class="align-center" src="images/result_example.png" alt="" style="max-width: 35%; height: auto; display: block; margin: 0 auto; border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+								<p class="align-center" style="font-size: 12px;">Example Prediction Result Output.</p>
 							</article>
 
                             <!-- Pagination -->
