@@ -82,7 +82,24 @@
 										<p>Preparing the dataset.</p>
 									</div>
 								</header>
+								<h3>The Images</h3>
+								<p>
+									After loading the dataset the images were all resized to 224x224 pixels using cv2.resize().
+									This is important for the models that each are the same shape, the MRI dataset before had images
+									in multiple different sizes. 
+								</p>
+								<h3>Label Mapping</h3>
+								<p>
+									The labels correspond to the different classifications; glioma, meningioma, pituitary, and notumor. They were
+									converted into numpy arrays and kept as integer values corresponding to their respective classes, 
+									defined in label_map.
+								</p>
+								<p>
+									Lastly, each image is normalized by dividing by 255, as the range for RGB is 0 to 255 and this normalizes the pixel values 
+									to the range 0 to 1.
+								</p>
 							</article>
+
 							
 							<article class="post">
 								<header>
@@ -91,24 +108,103 @@
 										<p>Let's introduce you to UNet and ResNet.</p>
 									</div>
 								</header>
+								<h3>U-Net</h3>
+								<p>
+									U-Net is a type of convolutional neural network specifically designed for biomedical image segmentation.
+									U-Net's architecture is unique due to its symmetric U-shaped design, which comprises a contracting path (encoder) and an expansive path (decoder).
+									The contracting path captures context through successive convolutional and pooling layers, progressively reducing the spatial dimensions while increasing the depth of feature maps.
+									Conversely, the expansive path restores the spatial dimensions through up-convolutions (transposed convolutions) and concatenations with corresponding feature maps from the 
+									contracting path, allowing precise localization and segmentation.
+								</p>
+								<p>
+									This model was developed to address the challenge of segmenting complex structures in biomedical images
+									where precise delineation is crucial for diagnostics and treatment planning. The architecture allows the network
+									to learn from relatively small datasets, a constraint often found in medical imaging. Today, U-Net has become
+									the standard in medical image analysis.
+								</p>
+								<h3>ResNet</h3>
+								<p>
+									ResNet is a convolutional neural network that was originally created to solve the vanishing/exploding gradient problem. 
+									The vanishing/exploding gradient problem occurs when the amount of layers increases past a 
+									threshold where the values for the gradient are either zero or too large. To summarize, 
+									a large number of layers can have adverse effects on the performance and increase error.
+								</p>
+								<p>
+									To solve this problem ResNet, short for residual networks, introduces residual blocks. 
+									These blocks contain skip connections that connect activations between layers. If a layer 
+									hurts the performance of the model, it is skipped by regularization. ResNet is made by stacking
+									multiple residual blocks together. 
+								</p>
+								<h3>The Next Steps</h3>
+								<p>
+									These are the two models that, after preprocessing, we build in preparation for training. 
+								</p>
+								<p>
+									In addition, U-Net is used to create segmentation masks for input using masks.py. Converting the 224x224 pixel 
+									images into a NumPy array and normalizing them from a range of [0, 1]. In this instance, the U-Net used has been 
+									pre-trained to predict segmentation masks for new images. The masks are binarized to convert the probability values 
+									into binary format. This labels the pixel as either part of the segmented object or not. Importantly, each mask is 
+									saved with a file name that corresponds to its associated image file name.
+								</p>
 							</article>
 
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2>Training</h2>
+										<h2>Training and Inference</h2>
 										<p>Growing their capabilties.</p>
 									</div>
 								</header>
+								<h3>The Setup</h3>
+								<p>
+									Here we upload the preprocessed training and testing images and segmentation masks from associated .npy files. 
+									Before training we use scikit-learn's  train_test_split() function to divide our training dataset
+									into training and validation sets. 
+									Our input parameters are set as:
+									<ul>
+										<li>input_shape = (224, 224, 3) -- Three for RGB channels.</li>
+										<li>num_classes = 4 -- For the tumor classifications.</li>
+										<li>model = build_resnet_model(input_shape, num_classes) -- ResNet is used for the diagnosis training.</li>
+										<li>epoch = 10</li>
+										<li>batch_size = 32</li>
+									</ul>
+								</p>
+								<p>
+									Here tensorflow is used to train the model for multi-class classification under the labels given in the label map. 
+									As the dataset is trained through ten epochs, the model and training history is saved. 
+								</p>
+								<p>
+									Once training is complete the model outputs the total history, including accuracy and loss for both the training and 
+									validation sets, as plots for visualization. 
+								</p>
+								<h3>Predictions</h3>
+								<p>
+									After downloading the models (either by URL or by path), we setup the classification labels and preprocess the testing 
+									images for each. The predictions can be run through our API, which allows the user to upload a single MRI image file or 
+									a batch of MRI image files that can be processed in a single request. 
+									Once the model has run it's diagnosis, it will output the image and it's predicted segmentation 
+									mask for the tumor location. The tumor size in pixels, relative size to the brain, and classification are produced to 
+									the user. 
+								</p>
 							</article>
 
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2>Inference</h2>
-										<p>Predicting new data.</p>
+										<h2>The API</h2>
+										<p>Making a user-friendly interface.</p>
 									</div>
 								</header>
+									<p>
+										After reading the process of preparing and utilizing U-Net and ResNet, you can tell that it can be complicated or at least
+										time consuming. The goal of our API is to present an efficient and powerful tool, receiving a diagnosis within seconds. 
+									</p>
+									<p>
+										While the capabilities are currently using four unique classifications, this interface has the potential to meet any number 
+										of classifications or medical image sets expected from the user. The simplicity greatly broadens the user base from 
+										computer science specialists, to any nurse or doctor without programming experience. 
+									</p>
+								
 							</article>
                             <!-- Pagination -->
 							<ul class="actions pagination">
