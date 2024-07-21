@@ -15,7 +15,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Brain Tumor Analysis Using Multi-Task CNN</a></h1>
+						<h1><a href="index.html">Multi-Task CNN Brain Tumor Analysis</a></h1>
 						<nav class="links">
 							<ul>
             					<li><a href="dataset.html">Dataset</a></li>
@@ -84,9 +84,9 @@
 								</header>
 								<h3>The Images</h3>
 								<p>
-									After loading the dataset the images were all resized to 224x224 pixels using cv2.resize().
+									After loading the dataset, the images were all resized to 224x224 pixels using cv2.resize().
 									This is important for the models that each are the same shape, the MRI dataset before had images
-									in multiple different sizes. 
+									in multiple varied sizes. 
 								</p>
 								<h3>Label Mapping</h3>
 								<p>
@@ -123,13 +123,13 @@
 								<p>
 									This model was developed to address the challenge of segmenting complex structures in biomedical images
 									where precise delineation is crucial for diagnostics and treatment planning. The architecture allows the network
-									to learn from relatively small datasets, a constraint often found in medical imaging. Today, U-Net has become
+									to learn from small datasets, a constraint often found in medical imaging. Today, U-Net has become
 									the standard in medical image analysis.
 								</p>
 								<h3>ResNet</h3>
 								<p>
 									ResNet is a convolutional neural network that was originally created to solve the vanishing/exploding gradient problem. 
-									The vanishing/exploding gradient problem occurs when the amount of layers increases past a 
+									The vanishing/exploding gradient problem occurs when the number of layers increases past a 
 									threshold where the values for the gradient are either zero or too large. To summarize, 
 									a large number of layers can have adverse effects on the performance and increase error.
 								</p>
@@ -190,7 +190,7 @@
 									After downloading the models (either by URL or by path), we setup the classification labels and preprocess the testing 
 									images for each. The predictions can be run through our API, which allows the user to upload a single MRI image file or 
 									a batch of MRI image files that can be processed in a single request. 
-									Once the model has run it's diagnosis, it will output the image and it's predicted segmentation 
+									Once the model has run its diagnosis, it will output the image and its predicted segmentation 
 									mask for the tumor location. The tumor size in pixels, relative size to the brain, and classification are produced to 
 									the user. 
 								</p>
